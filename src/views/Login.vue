@@ -2,16 +2,16 @@
     <div>
         <cabecera/>
         <div class="form ">
-            <img src="./images/login-register_logo.svg" alt="Usuario">
+            <img src="../assets/images/login-register_logo.svg" alt="Usuario">
             <div class= "camp_form">
                 <h4>E-mail</h4>
-                <input type="text">
+                <input type="email" v-model.trim="emailinp" placeholder="example@something.com" >
             
             </div>
             
             <div class ="camp_form">
                 <h4>Password</h4>
-                <input type="password">
+                <input type="password" placeholder="••••••••" v-model.trim="passwordinp">
             </div>
             
             <button>Log In</button>
@@ -26,9 +26,16 @@ export default {
     name: 'login',
     components: {
         cabecera
+    },
+    data(){
+        return{
+            emailinp: '',
+            passwordinp: ''
+        }
     }
 }
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap%27');
@@ -38,12 +45,10 @@ export default {
 }
 
 .form{
-    padding-top: 7%;  
+    padding-top: 2%;  
     width: 25%;
     margin: auto;
 }
-
-
 img{
     padding-bottom: 20px;    
 }
@@ -58,6 +63,14 @@ input{
     
 }
 
+.input_w {
+    border:none;
+    outline: none;
+    border-bottom:2px solid ;
+    width: 100%;
+    color:  #ec0808;
+
+}
 
 .camp_form {
     text-align: center;
@@ -80,3 +93,4 @@ button{
 }
 
 </style>
+

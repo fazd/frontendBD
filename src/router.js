@@ -25,6 +25,26 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ './views/Login.vue')
-    }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import(/* webpackChunkName: "products" */ './views/Products.vue')
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      component: () => import(/* webpackChunkName: "categories" */ './views/Categories.vue')
+    },
+    {
+      path: '/stocks',
+      name: 'stocks',
+      component: () => import(/* webpackChunkName: "stocks" */ './views/Stocks.vue')
+    },
   ]
 })

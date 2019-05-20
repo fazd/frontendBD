@@ -2,7 +2,7 @@
     <div id = "register">
         <cabecera/>
         <div class = "form">
-            <img src="./images/login-register_logo.svg" alt="Usuario">
+            <img src="../assets/images/login-register_logo.svg" alt="Usuario">
             <div class= "camp_form">
                 <h4>Nombre</h4>
                 <input   type="text" :class= "[ nombreinp.length > 0 ? 'input' : 'input_w']" v-model.trim="nombreinp" placeholder="Nombre" v-on:input="validateAll"> 
@@ -31,7 +31,7 @@
                 <h4>Repeat password</h4>
                 <input type="password" :class = "[enablePass2 ? 'input' : 'input_w' ]"  v-model.trim="pass2inp" placeholder="•••••••• " v-on:input="isPasswordMatch">
             </div>
-            <button :disabled="!enableButton">Register</button>
+            <button :disabled="!enableButton" @click="$router.push('login')">Register</button>
         </div>
     </div>
 </template>
@@ -55,7 +55,7 @@ export default {
             enablePass: false,
             enablePass2: false,
             enableEmail: false,
-            enableButton: false
+            enableButton: true
         }
     },
     methods: {
@@ -82,8 +82,11 @@ export default {
             return param.length === 0;   
         },
         validateAll(){
-            this.enableButton = (this.enableTel && this.enablePass && this.enableEmail &&  this.enablePass2 && this.nombreinp.length>0 && this.apellidoinp > 0 );
-            console.log(this.enableButton);
+            //this.enableButton = (this.enableTel && this.enablePass && this.enableEmail &&  this.enablePass2 && this.nombreinp.length>0 && this.apellidoinp > 0 );
+            //console.log(this.enableButton);
+        },
+        changeWindow(){
+            window.location = ('./#/login');
         }
 
     }
@@ -148,7 +151,5 @@ button{
     font-weight: bold;
     
 }
-
-
 
 </style>

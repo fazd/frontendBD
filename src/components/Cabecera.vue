@@ -5,6 +5,8 @@
         <ul>
             <li><router-link to="/login"  class="navText" >Login</router-link></li>
             <li><router-link to="/register" class="navText" >Register</router-link></li>
+            <li><router-link to="/dashboard" class="navText" >DashBoard</router-link></li>
+            
         </ul> 
         
         
