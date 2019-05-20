@@ -1,0 +1,54 @@
+:root{
+    button-color: #556080;
+    font-color:  #556080;
+    text-color:  #556080; 
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap%27');
+    
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form{
+    padding-top: 7%;  
+    width: 25%;
+    margin: auto;
+}
+
+
+img{
+    padding-bottom: 20px;    
+}
+
+input{
+    
+    border:none;
+    outline: none;
+    border-bottom:2px solid ;
+    width: 100%;
+    color: #556080;
+    
+}
+
+
+.camp_form {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.camp_form h4{
+    text-align: left; 
+}
+button{
+    width: fit-content;
+    background-color: #556080;
+    margin-top: 30px;
+    color: #ffffff;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
