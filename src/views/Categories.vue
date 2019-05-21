@@ -3,30 +3,23 @@
         <BarrasControl title="Categories"></BarrasControl>
         <div class="combobox">
             <select v-model="catinp">
-                <option value="Cat1">Cat1</option>
-                <option value="Cat2">Cat2</option>
-                <option value="Cat3">Cat3</option>
-                <option value="Cat4">Cat4</option>
+                <option v-for="cat of Categories" :key="cat.nombre" value="Cat1">{{cat.nombre}}</option>
+                
             </select>     
         </div>
         <div class="elim-btn">
             <button @click="elm">eliminar</button>
         </div>
-        <CategoryView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></CategoryView>
-        <CategoryView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></CategoryView>
-        <CategoryView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></CategoryView>
-        <CategoryView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></CategoryView>
+        <CategoryView v-for="prod of elemCat " :key="prod.name" v-bind:dir = "prod.dir" v-bind:nombre="prod.nombre"
+        v-bind:categoria="prod.categoria" v-bind:numStock="prod.numStock" ></CategoryView>
+        
     </div>
 </template>
 
 <script>
 import BarrasControl from '@/components/BarrasControl.vue'
 import CategoryView from '@/components/CategoryView.vue'
-
+import {mapState} from 'vuex'
 
 export default {
     name: 'Categories',
@@ -46,6 +39,9 @@ export default {
             let catJson = JSON.stringify(obj);
             console.log(catJson);
         }
+    },
+    computed:{
+        ...mapState(['Categories', 'elemCat']) 
     }
 }
 </script>

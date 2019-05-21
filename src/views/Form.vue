@@ -9,10 +9,7 @@
             <div class= "camp_form" id="categoria">
                 <h4>Categoria</h4>
                 <select v-model.trim="catinp" >
-                    <option value="Cat1">Cat1</option>
-                    <option value="Cat2">Cat2</option>
-                    <option value="Cat3">Cat3</option>
-                    <option value="Cat4">Cat4</option>
+                    <option v-for="cat of Categories" :key="cat.nombre" value="Cat1">{{cat.nombre}}</option>
                 </select> 
             </div>
             <div class= "camp_form">
@@ -34,6 +31,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     name: 'Form',
     data (){
@@ -58,6 +56,9 @@ export default {
                 window.location = ('./#/products');
             }
         }
+    },
+    computed:{
+        ...mapState(['Categories'])
     }
 }
 </script>
