@@ -1,11 +1,11 @@
 <template>
     <div>
          <div class = "navBar">
-                <div class="title"><p>Inventory Management</p></div>
+                <div class="title"><p>{{title}}</p></div>
                 <div class = "userLogo"><img src="../assets/images/user.svg" alt="usuario"></div>                
          </div>
          <div class="verticalBar">
-             <div class ="box" id="corner"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div> 
+             <div class ="box" id="corner" @click="gotoDash"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div> 
              <div class ="box" @click="gotoware" ><img src="../assets/images/warehouse1.svg" alt="imagen conf"></div> 
              <div class ="box" @click="gotoreload" ><img src="../assets/images/reload.svg" alt="imagen conf"></div> 
              <div class ="box" @click="gotopie" ><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div>  
@@ -27,8 +27,12 @@ export default {
         },
         gotopie(){
             window.location = ('./#/stocks');
+        },
+        gotoDash(){
+            window.location = ('./#/dashboard');
         }
-    }
+    },
+    props: ['title']
 }
 </script>
 

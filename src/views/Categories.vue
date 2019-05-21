@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BarrasControl/>
+        <BarrasControl title="Categories"></BarrasControl>
         
     </div>
 </template>

@@ -46,5 +46,10 @@ export default new Router({
       name: 'stocks',
       component: () => import(/* webpackChunkName: "stocks" */ './views/Stocks.vue')
     },
+    {
+      path: '/form',
+      name: 'form',
+      component: () => import(/* webpackChunkName: "stocks" */ './views/Form.vue')
+    }
   ]
 })

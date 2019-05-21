@@ -1,18 +1,7 @@
 <template>
     <div>
         <BarrasControl/>
-        <!--
-         <div class = "navBar">
-                <div class="title"><p>Inventory Management</p></div>
-                <div class = "userLogo"><img src="../assets/images/user.svg" alt="usuario"></div>                
-         </div>
-         <div class="verticalBar">
-             <div class ="box" id="corner"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/warehouse1.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/reload.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div>  
-         </div>
-        -->
+        
         <div class="center-btn">
             <img class ="img-btn" @click="gotoCat" src="../assets/images/categories-card.svg" alt="categoryCard">
             <img class ="img-btn" @click="gotoProd" src="../assets/images/product-card.svg" alt="productCard">

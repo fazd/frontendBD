@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BarrasControl/>
+        <BarrasControl title="Stock"></BarrasControl>
         
     </div>
 </template>
