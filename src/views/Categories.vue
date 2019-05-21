@@ -3,14 +3,14 @@
         <BarrasControl title="Categories"></BarrasControl>
         <div class="combobox">
             <select v-model="catinp">
-                <option v-for="cat of Categories" :key="cat.nombre" value="Cat1">{{cat.nombre}}</option>
+                <option v-for="cat of Categories" :key="cat.nombre" v-bind:value="cat.nombre">{{cat.nombre}}</option>
                 
             </select>     
         </div>
         <div class="elim-btn">
             <button @click="elm">eliminar</button>
         </div>
-        <CategoryView v-for="prod of elemCat " :key="prod.name" v-bind:dir = "prod.dir" v-bind:nombre="prod.nombre"
+        <CategoryView v-for="prod of filterArray " :key="prod.name" v-bind:dir = "prod.dir" v-bind:nombre="prod.nombre"
         v-bind:categoria="prod.categoria" v-bind:numStock="prod.numStock" ></CategoryView>
         
     </div>
@@ -29,7 +29,7 @@ export default {
     },
     data(){
         return{
-            catinp: ''
+            catinp: 'Categoria 1'
         }
     },
     methods: {
@@ -41,7 +41,12 @@ export default {
         }
     },
     computed:{
-        ...mapState(['Categories', 'elemCat']) 
+        ...mapState(['Categories', 'elemCat']),
+        filterArray(){
+            console.log(this.elemCat.filter(x => x.categoria === this.catinp));
+            console.log('este es catinp '+ this.catinp);
+            return this.elemCat.filter(x => x.categoria === this.catinp);
+        } 
     }
 }
 </script>

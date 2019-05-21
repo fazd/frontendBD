@@ -10,7 +10,7 @@ export default new Vuex.Store({
         dir: {ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 1",
-        categoria: "cat 1",
+        categoria: "categoria 1",
         numStock: "20"
       },
       {
@@ -18,7 +18,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 2",
-        categoria: "cat 2",
+        categoria: "categoria 2",
         numStock: "20"
       },
       {
@@ -26,7 +26,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 3",
-        categoria: "cat 3",
+        categoria: "categoria 3",
         numStock: "20"
       },
       {
@@ -34,7 +34,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 4",
-        categoria: "cat 4",
+        categoria: "categoria 4",
         numStock: "20"
       },
       {
@@ -42,7 +42,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 5",
-        categoria: "cat 5",
+        categoria: "categoria 5",
         numStock: "20"
       },
     ],
@@ -51,7 +51,7 @@ export default new Vuex.Store({
         dir: {ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 1",
-        categoria: "cat 1",
+        categoria: "categoria 1",
         numStock: "20"
       },
       {
@@ -59,7 +59,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 2",
-        categoria: "cat 2",
+        categoria: "categoria 2",
         numStock: "20"
       },
       {
@@ -67,7 +67,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 3",
-        categoria: "cat 3",
+        categoria: "categoria 3",
         numStock: "20"
       },
       {
@@ -75,7 +75,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 4",
-        categoria: "cat 4",
+        categoria: "categoria 4",
         numStock: "20"
       },
       {
@@ -83,7 +83,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 5",
-        categoria: "cat 5",
+        categoria: "categoria 5",
         numStock: "20"
       } 
     ],
@@ -109,7 +109,7 @@ export default new Vuex.Store({
         dir: {ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 1",
-        categoria: "cat 1",
+        categoria: "categoria 1",
         numStock: "20"
       },
       {
@@ -117,7 +117,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 2",
-        categoria: "cat 2",
+        categoria: "categoria 2",
         numStock: "20"
       },
       {
@@ -125,7 +125,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 3",
-        categoria: "cat 3",
+        categoria: "categoria 3",
         numStock: "20"
       },
       {
@@ -133,7 +133,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 4",
-        categoria: "cat 4",
+        categoria: "categoria 4",
         numStock: "20"
       },
       {
@@ -141,7 +141,7 @@ export default new Vuex.Store({
           ruta: require('./assets/images/logo.png')
         },
         nombre: "producto 5",
-        categoria: "cat 5",
+        categoria: "categoria 5",
         numStock: "20"
       },
     ],

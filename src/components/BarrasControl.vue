@@ -24,10 +24,10 @@ export default {
             window.location = ('./#/stocks');
         },
         gotoreload(){
-            window.location = ('./#/stocks');
+            window.location = ('./#/products');
         },
         gotopie(){
-            window.location = ('./#/stocks');
+            window.location = ('./#/categories');
         },
         gotoDash(){
             window.location = ('./#/dashboard');

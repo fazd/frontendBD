@@ -37,7 +37,7 @@ export default {
     data (){
         return {
             nombreinp: '',
-            catinp: '',
+            catinp: 'Categoria 1',
             precioinp: '',
             urlinp: ''
         }
