@@ -1,45 +1,31 @@
 <template>
     <div>
-        <BarrasControl/>
-        <!--
          <div class = "navBar">
                 <div class="title"><p>Inventory Management</p></div>
                 <div class = "userLogo"><img src="../assets/images/user.svg" alt="usuario"></div>                
          </div>
          <div class="verticalBar">
              <div class ="box" id="corner"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/warehouse1.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/reload.svg" alt="imagen conf"></div> 
-             <div class ="box"><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div>  
+             <div class ="box" @click="gotoware" ><img src="../assets/images/warehouse1.svg" alt="imagen conf"></div> 
+             <div class ="box" @click="gotoreload" ><img src="../assets/images/reload.svg" alt="imagen conf"></div> 
+             <div class ="box" @click="gotopie" ><img src="../assets/images/pie-chart1.svg" alt="imagen conf"></div>  
          </div>
-        -->
-        <div class="center-btn">
-            <img class ="img-btn" @click="gotoCat" src="../assets/images/categories-card.svg" alt="categoryCard">
-            <img class ="img-btn" @click="gotoProd" src="../assets/images/product-card.svg" alt="productCard">
-            <img class ="img-btn" @click="gotoSto" src="../assets/images/stock-card.svg" alt="stockCard">
-
-        </div>
+        
+        
     </div>
-    
-
-
 </template>
 
 <script>
-import BarrasControl from '@/components/BarrasControl.vue'
 export default {
-    name: 'Dashboard',
-    components: {
-        BarrasControl
-    },
+    name : 'BarrasControl',
     methods:{
-        gotoCat(){
-            window.location = ('./#/categories');
+        gotoware(){
+            window.location = ('./#/stocks');
         },
-         gotoProd(){
-            window.location = ('./#/products');
+        gotoreload(){
+            window.location = ('./#/stocks');
         },
-         gotoSto(){
+        gotopie(){
             window.location = ('./#/stocks');
         }
     }
@@ -47,9 +33,11 @@ export default {
 </script>
 
 
+
 <style>
 *{
     margin: 0;
+    
 }
 
 
@@ -93,30 +81,16 @@ html, body{
     padding:7vh 5vh 3vh 3vh;
     text-align: center;
 }
+
+.box:hover{
+    cursor:pointer;
+}
 #corner{
     background-color:#596286;
     padding-top: 3vh;
     padding-bottom: 2.3vh;
 }
 
-.center-btn{
-    width: 92.9%;
-    float: right;
-    top: 10vh; 
-    padding-top: 10%;
-    background-color: #f2f3f7;
-}
-
-.img-btn{
-    height: 200px;
-    width: 500px;
-    padding-bottom: 40px;
-
-}
-
-.img-btn:hover{
-    cursor:pointer;
-}
 
 </style>
 

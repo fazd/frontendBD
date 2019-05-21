@@ -5,7 +5,7 @@
             <img src="../assets/images/login-register_logo.svg" alt="Usuario">
             <div class= "camp_form">
                 <h4>E-mail</h4>
-                <input type="email" v-model.trim="emailinp" placeholder="example@something.com" >
+                <input type="email" v-model.trim="emailinp" placeholder="example@something.com" id = "correoprueba">
             
             </div>
             
@@ -14,11 +14,14 @@
                 <input type="password" placeholder="••••••••" v-model.trim="passwordinp">
             </div>
             
-            <button>Log In</button>
+            <button @click="execute">Log In</button>
 
         </div>
     </div>
 </template>
+
+
+<script src="../../api/routes/users.js"></script>
 
 <script>
 import cabecera from '@/components/Cabecera.vue'
@@ -31,6 +34,17 @@ export default {
         return{
             emailinp: '',
             passwordinp: ''
+        }
+    },
+    methods: {
+        execute(){
+            var obj = new Object();
+
+            obj.em =  this.emailinp;
+            obj.pass = this.passwordinp;
+            var jsonString = JSON.stringify(obj);
+            console.log(jsonString);
+
         }
     }
 }
