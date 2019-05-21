@@ -31,7 +31,7 @@
                 <h4>Repeat password</h4>
                 <input type="password" :class = "[enablePass2 ? 'input' : 'input_w' ]"  v-model.trim="pass2inp" placeholder="•••••••• " v-on:input="isPasswordMatch">
             </div>
-            <button :disabled="!enableButton" @click="$router.push('login')">Register</button>
+            <button :disabled="!enableButton" @click="changeWindow">Register</button>
         </div>
     </div>
 </template>
@@ -86,7 +86,19 @@ export default {
             //console.log(this.enableButton);
         },
         changeWindow(){
-            window.location = ('./#/login');
+            var obj = new Object ();
+            obj.name = this.nombreinp;
+            obj.apellido = this.apellidoinp;
+            obj.phone = this.phoneinp;
+            obj.email = this.emailinp;
+            obj.password = this.passinp;
+            var regisJson = JSON.stringify(obj); 
+            console.log(regisJson);
+            let reci = true;
+            if(reci){
+                window.location = ('./#/login');
+            }
+            
         }
 
     }

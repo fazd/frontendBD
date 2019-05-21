@@ -8,7 +8,7 @@
             </div>
             <div class= "camp_form" id="categoria">
                 <h4>Categoria</h4>
-                <select>
+                <select v-model.trim="catinp" >
                     <option value="Cat1">Cat1</option>
                     <option value="Cat2">Cat2</option>
                     <option value="Cat3">Cat3</option>
@@ -46,7 +46,17 @@ export default {
     },
     methods:{
         agreg(){
-            window.location = ('./#/products');
+            let obj = new Object();
+            obj.name=this.nombreinp;
+            obj.cat = this.catinp;
+            obj.precio = this.precioinp;
+            obj.urlinp = this.urlinp;
+            let formJson = JSON.stringify(obj);
+            console.log(formJson);
+            let reci = true;
+            if(reci){
+                window.location = ('./#/products');
+            }
         }
     }
 }

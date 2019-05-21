@@ -5,18 +5,9 @@
             <button @click="gotoform">Agregar Productos</button>
         </div>
         
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
-        <ProductView :dir = "{ ruta: require('../assets/images/logo.png')}" nombre="producto 1"
-        categoria="cat 1" numStock="20" ></ProductView>
+        <ProductView  v-for="prod of productos" :key="prod.nombre" v-bind:dir = "prod.dir" v-bind:nombre="prod.nombre"
+        v-bind:categoria="prod.categoria" v-bind:numStock="prod.numStock" ></ProductView>
+        
         
     </div>
 </template>
@@ -24,8 +15,10 @@
 <script>
 import BarrasControl from '@/components/BarrasControl.vue'
 import ProductView from '@/components/ProductView.vue'
+import {mapState} from 'vuex'
 
 export default {
+
     name: 'Products',
     components: {
         BarrasControl,
@@ -35,6 +28,9 @@ export default {
         gotoform(){
             window.location = ('./#/form');
         }
+    },
+    computed: {
+        ...mapState(['productos']) 
     }
 }
 </script>

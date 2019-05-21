@@ -39,14 +39,17 @@ export default {
     methods: {
         execute(){
             var obj = new Object();
-
-            obj.em =  this.emailinp;
+            obj.email = this.emailinp;
             obj.pass = this.passwordinp;
-            var jsonString = JSON.stringify(obj);
-            console.log(jsonString);
-
+            let logJson = JSON.stringify(obj);
+            console.log(logJson);
+            let reci = true;
+            if(reci){
+                window.location =  ('./#/dashboard');
+            }
         }
-    }
+    },
+
 }
 </script>
 

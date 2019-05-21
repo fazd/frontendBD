@@ -3,23 +3,23 @@
         <div class="logoImg"><img :src="dir.ruta" :alt="dir"></div>
             <div class="info">
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true"  :placeholder="nombre">
+                    <input :class="clase" type="text" :readonly="valEn === true" v-model="nombre" :placeholder="nombre">
                 </div>
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true"  :placeholder="categoria">
+                    <input :class="clase" type="text" :readonly="valEn === true" :v-model="categoria" :placeholder="categoria">
                 </div>
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true" :v-model="numStock" :placeholder="numStock">
+                    <input :class="clase" type="text" :readonly="valEn === true" :v-model="numStock" v-model="numStock" :placeholder="numStock">
                 </div>                    
             </div>
             <div class = "btn-v">
                 <div id ="aum">
                     <p>Retirar de Stock</p>
-                    <button @click= "numStock--"><img src="../assets/images/delete.svg" alt="modificar"></button>
+                    <button @click= "dism"><img src="../assets/images/delete.svg" alt="modificar"></button>
                 </div>
                 <div id="decr">
                     <p>Aumentar de Stock</p>
-                    <button @click= "numStock++"><img src="../assets/images/plus.svg" alt="modificar"></button>
+                    <button @click= "aumen"><img src="../assets/images/plus.svg" alt="modificar"></button>
                 </div>
             </div>
         </div>
@@ -38,20 +38,13 @@ export default {
         }
     },
     methods:{
-        modify(){
-            if(this.valEn===false){
-                this.valEn = true;   
-                this.clase = 'atrr-prod'; 
-            }
-            else{
-                this.valEn = false;
-                this.clase = 'atrr-prod_en';
-            }
-            
+        aumen(){
+            this.numStock++;
         },
-        elim(){
-
+        dism(){
+            this.numStock--;
         }
+
     }
     
 }

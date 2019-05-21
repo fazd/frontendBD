@@ -3,13 +3,13 @@
         <div class="logoImg"><img :src="dir.ruta" :alt="dir"></div>
             <div class="info">
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true"  :placeholder="nombre">
+                    <input :class="clase" type="text" :readonly="valEn === true"  v-model="nombre" placeholder="nombre">
                 </div>
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true"  :placeholder="categoria">
+                    <input :class="clase" type="text" :readonly="valEn === true" v-model="categoria" :placeholder="categoria">
                 </div>
                 <div class = "productCamp">
-                    <input :class="clase" type="text" :readonly="valEn === true"  :placeholder="numStock">
+                    <input :class="clase" type="text" :readonly="valEn === true" v-model="numStock" :placeholder="numStock">
                 </div>                    
             </div>
             <div class = "btn-v">
@@ -50,6 +50,13 @@ export default {
                 this.valEn = false;
                 this.clase = 'atrr-prod_en';
             }
+            var obj = new Object();
+            obj.name = this.nombre;
+            obj.cat = this.categoria;
+            obj.dir = this.dir;
+            obj.numStock = this.numStock;
+            let editJson = JSON.stringify(obj);
+            console.log(editJson);
             
         },
         elim(){
