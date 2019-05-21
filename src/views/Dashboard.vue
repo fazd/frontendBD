@@ -48,45 +48,6 @@ html, body{
 }
 
 
-.navBar{
-    width: 100%;
-    padding: 5vh 0;
-    padding-left: 30vh;
-    text-align: left;
-    position:fixed;
-    background-color: #ffffff;
-}
-
-.verticalBar{
-    height: 100vh;
-    width: 15vh;
-    z-index: 1;
-    background-color: #6e7796;
-    text-align: center;
-    position:fixed;
-}
-
-.userLogo{
-    height: 7vh;
-    width: 7vh;
-    padding-right: 30vh;
-    top: 3vh;
-    right: 11vh;
-    position: absolute;
-
-}
-
-.box{
-    width: 46%;
-    margin: auto;
-    padding:7vh 5vh 3vh 3vh;
-    text-align: center;
-}
-#corner{
-    background-color:#596286;
-    padding-top: 3vh;
-    padding-bottom: 2.3vh;
-}
 
 .center-btn{
     width: 92.9%;

@@ -120,9 +120,9 @@ export default {
 .btn-v button{
     height: 50px;
     width: 50px;
-    background-color: #ffffff;
     border: none;
     background-color: #f2f3f7;
+    margin: 0;
 }
 #aum{
     float:left;

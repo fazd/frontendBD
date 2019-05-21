@@ -90,15 +90,15 @@ export default {
 }
 
 .botonagre{
+    width: 40%;
     padding: 20vh;
-    float: right;
-    text-align: right;
-    padding-left: 20px;
+    text-align: center;
+    padding-left: 60vh;
     
 }
 
 .botonagre button{
-    width: fit-content;
+    width: 20%;
     background-color: #556080;
     margin-top: 30px;
     color: #ffffff;
