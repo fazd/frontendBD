@@ -2,7 +2,7 @@
  * Express Router
  */
 const express = require('express');
-const rout = express.rout();
+const rout = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -104,8 +104,4 @@ rout.delete('/', (req, res) => {
 });
 
 
-module.exports = router;
-
-function alertN(){
-    console.log('hola mundo');    
-}
+module.exports = rout;

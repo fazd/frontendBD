@@ -7,6 +7,8 @@
         
         <ProductView  v-for="prod of productos" :key="prod.nombre" v-bind:dir = "prod.dir" v-bind:nombre="prod.nombre"
         v-bind:categoria="prod.categoria" v-bind:numStock="prod.numStock" ></ProductView>
+        <ProductView  v-for="prod of this.data2" :key="prod.name" v-bind:dir = "prod.url" v-bind:nombre="prod.name"
+        v-bind:categoria="prod.category" v-bind:numStock="prod.price" ></ProductView>
         
         
     </div>
@@ -24,13 +26,54 @@ export default {
         BarrasControl,
         ProductView
     },
-    methods: {
-        gotoform(){
-            window.location = ('./#/form');
+    data() {
+        return {
+            data2:{} 
         }
     },
+    methods: {
+    change(){
+            console.log('hola');
+            fetch('http://localhost:2000/products', {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Access-Control-Allow-Origin':'*'
+                },
+                
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+                }
+
+                // Examine the text in the response
+                response.json().then((data) => {
+                console.log(data);
+                this.data2= data;
+                console.log(this.data2);
+                });
+            }
+            )
+            .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+            });
+            
+
+    },
+    gotoform(){
+            window.location = ('./#/form');
+            this.change();
+    }
+    },
     computed: {
-        ...mapState(['productos']) 
+        ...mapState(['productos']),
+        
+
     }
 }
 </script>

@@ -2,8 +2,8 @@
 const express = require('express');
 const app = express();
 app.listen(2000, function () {
-    console.log('app started on port 2000...');
 });
+
 
 
 //Body Parser

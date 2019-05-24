@@ -38,6 +38,7 @@ export default {
             obj.cat = this.catinp;
             let catJson = JSON.stringify(obj);
             console.log(catJson);
+            this.Categories.filter(x=> x.categoria !== this.catinp);
         }
     },
     computed:{

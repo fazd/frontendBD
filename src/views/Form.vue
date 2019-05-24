@@ -46,11 +46,38 @@ export default {
         agreg(){
             let obj = new Object();
             obj.name=this.nombreinp;
-            obj.cat = this.catinp;
-            obj.precio = this.precioinp;
+            obj.category = this.catinp;
+            obj.price = this.precioinp;
             obj.urlinp = this.urlinp;
+            obj.auth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImQiLCJpZCI6IlVNSkRFcCIsImlhdCI6MTU1ODQ1Mzg0NSwiZXhwIjoxNTU4NDU3NDQ1fQ.JB9jA2QJdppG80IHTO5j4oEoNr1PBzTv2CWZhq2c02Y';
             let formJson = JSON.stringify(obj);
             console.log(formJson);
+            fetch('http://localhost:2000/products', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Access-Control-Allow-Origin':'*'
+                },
+                body: formJson
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+                }
+
+                // Examine the text in the response
+                response.json().then((data) => {
+                console.log(data);
+                });
+            }
+            )
+            .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+            });
             let reci = true;
             if(reci){
                 window.location = ('./#/products');

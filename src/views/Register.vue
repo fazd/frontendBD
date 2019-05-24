@@ -88,15 +88,43 @@ export default {
         changeWindow(){
             var obj = new Object ();
             obj.name = this.nombreinp;
-            obj.apellido = this.apellidoinp;
+            obj.lastname = this.apellidoinp;
             obj.phone = this.phoneinp;
             obj.email = this.emailinp;
             obj.password = this.passinp;
-            var regisJson = JSON.stringify(obj); 
+            var regisJson = JSON.stringify(obj);
             console.log(regisJson);
+            fetch('http://localhost:2000/user/signup', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Access-Control-Allow-Origin':'*'
+                },
+                body: regisJson
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.status !== 201) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+                }
+
+                // Examine the text in the response
+                response.json().then((data) => {
+                console.log(data);
+                });
+            }
+            )
+            .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+            });
+
             let reci = true;
             if(reci){
                 window.location = ('./#/login');
+
             }
             
         }

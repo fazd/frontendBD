@@ -40,9 +40,35 @@ export default {
         execute(){
             var obj = new Object();
             obj.email = this.emailinp;
-            obj.pass = this.passwordinp;
+            obj.password = this.passwordinp;
             let logJson = JSON.stringify(obj);
             console.log(logJson);
+            fetch('http://localhost:2000/user/login', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Access-Control-Allow-Origin':'*',
+                },
+                body: logJson
+            })
+            .then((response) => {
+                console.log(response);
+                if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+                }
+
+                // Examine the text in the response
+                response.json().then((data) => {
+                console.log(data);
+                });
+            }
+            )
+            .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+            });
             let reci = true;
             if(reci){
                 window.location =  ('./#/dashboard');
